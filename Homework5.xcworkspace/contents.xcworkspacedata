@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Homework_5.1/Homework_5.1.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Homework_5/Homework_5.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Timer/Timer.xcodeproj">
+   </FileRef>
+</Workspace>
