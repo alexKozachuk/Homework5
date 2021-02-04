@@ -9,8 +9,8 @@ import UIKit
 
 class SnowViewController: UIViewController {
     
-    var snowView: SnowView?
-    var button: UIButton?
+    private var snowView: SnowView?
+    private var button: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,17 +19,16 @@ class SnowViewController: UIViewController {
         setupSnowView()
         setupButton()
         
-        
-    }
-    
-    @objc func makeItSnowButtonTapped() {
-        button?.isSelected.toggle()
-        snowView?.isAnimate.toggle()
     }
     
 }
 
 private extension SnowViewController {
+    
+    @objc func makeItSnowButtonTapped() {
+        button?.isSelected.toggle()
+        snowView?.isAnimate.toggle()
+    }
     
     func setupGradientView() {
         let sky = GradientView()

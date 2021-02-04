@@ -11,25 +11,29 @@ final class PulseView: UIView {
     
     var isAnimate: Bool = false {
         didSet {
-            if isAnimate {
-                layers.forEach {
-                    $0.isHidden = false
-                    $0.removeAllAnimations()
-                }
-                addAnimatePulse(layers)
-            } else {
-                layers.forEach {
-                    $0.isHidden = true
-                    $0.removeAllAnimations()
-                }
+            layers.forEach {
+                $0.isHidden = !isAnimate
+                $0.removeAllAnimations()
             }
-            
+            if isAnimate {
+                addAnimatePulse(layers)
+            }
         }
     }
     
     private var layers: [CAShapeLayer] = []
     
     override func layoutSubviews() {
+        createPulseView()
+        isAnimate = false
+    }
+    
+}
+
+private extension PulseView {
+    
+    func createPulseView() {
+        
         let circularPath = UIBezierPath(arcCenter: .zero, radius: frame.width / 2, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
         
         for _ in 0..<3 {
@@ -41,12 +45,7 @@ final class PulseView: UIView {
             layers.append(pulseLayer)
         }
         
-        isAnimate = false
     }
-    
-}
-
-private extension PulseView {
     
     func makeScaleAnimation() -> CABasicAnimation {
         let scaleAnimation = CABasicAnimation(keyPath: "transform.scale")

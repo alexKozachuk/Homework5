@@ -9,8 +9,8 @@ import UIKit
 
 class ConfettiViewController: UIViewController {
     
-    var confettiView: ConfettiView?
-    var button: UIButton?
+    private var confettiView: ConfettiView?
+    private var button: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,14 @@ class ConfettiViewController: UIViewController {
         setupLabel()
     }
     
+}
+
+private extension ConfettiViewController {
+    
     @objc func makeItSnowButtonTapped() {
         button?.isSelected.toggle()
         confettiView?.isAnimate.toggle()
     }
-    
-}
-
-private extension ConfettiViewController {
     
     func setupLabel() {
         guard let button = button else { return }
@@ -79,7 +79,7 @@ private extension ConfettiViewController {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 5
-        button.setTitle("Make it Fan", for: .normal)
+        button.setTitle("Make it Fun", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("Make it Stop", for: .selected)

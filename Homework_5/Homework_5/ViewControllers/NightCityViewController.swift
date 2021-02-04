@@ -9,8 +9,8 @@ import UIKit
 
 class NightCityViewController: UIViewController {
     
-    var fireworkView: FireworkView?
-    var button: UIButton?
+    private var fireworkView: FireworkView?
+    private var button: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +23,14 @@ class NightCityViewController: UIViewController {
         
     }
     
+}
+
+private extension NightCityViewController {
+    
     @objc func makeItSnowButtonTapped() {
         button?.isSelected.toggle()
         fireworkView?.isAnimate.toggle()
     }
-    
-}
-
-private extension NightCityViewController {
     
     func setupGradientView() {
         let sky = GradientView()
@@ -51,7 +51,7 @@ private extension NightCityViewController {
         button.backgroundColor = .white
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 5
-        button.setTitle("Make it Show", for: .normal)
+        button.setTitle("Make it Showy", for: .normal)
         button.setTitleColor(UIColor.green, for: .normal)
         button.setTitleColor(UIColor.red, for: .selected)
         button.setTitle("Make it Stop", for: .selected)

@@ -15,14 +15,13 @@ final class ConfettiView: UIView {
         }
     }
     
+    private var emitter: CAEmitterLayer?
     var particleImage: UIImage?
     var colors: [UIColor]?
 
     override class var layerClass: AnyClass {
         return CAEmitterLayer.self
     }
-    
-    private var emitter: CAEmitterLayer?
     
     override func layoutSubviews() {
         createEmmiter()

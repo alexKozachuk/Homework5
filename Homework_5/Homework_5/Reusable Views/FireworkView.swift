@@ -14,8 +14,8 @@ final class FireworkView: UIView {
             updateLayer()
         }
     }
+    
     var particleImage: UIImage?
-
     private var emitter: CAEmitterLayer?
     
     override func layoutSubviews() {

@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var pulse: PulseView!
+    @IBOutlet private weak var pulse: PulseView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

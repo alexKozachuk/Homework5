@@ -16,12 +16,11 @@ final class SnowView: UIView {
     }
     
     var particleImage: UIImage?
+    private var emitter: CAEmitterLayer?
 
     override class var layerClass: AnyClass {
         return CAEmitterLayer.self
     }
-    
-    private var emitter: CAEmitterLayer?
     
     override func layoutSubviews() {
         createEmmiter()

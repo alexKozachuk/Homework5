@@ -9,15 +9,13 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet private weak var scrollView: UIScrollView!
     private var pages: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupScrollView()
     }
-    
-    
 
 }
 
